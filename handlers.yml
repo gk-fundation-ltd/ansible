@@ -1,0 +1,16 @@
+# handlers in my playbook
+- hosts: tek
+  become: true
+  vars_prompt:
+   - name: mahesh
+     prompt: please enter the package name
+   
+  tasks: 
+    - name: package '{{ mahesh }}' installation
+      yum: pkg='{{ mahesh }}' state=present
+      
+      notify: service start
+  handlers:
+    - name: service start
+      service: name='{{ mahesh }}' state=started
+

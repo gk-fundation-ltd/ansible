@@ -1,0 +1,16 @@
+# tags playbook
+---
+- hosts: tek 
+  become: true
+  tasks:
+   - name: enter your name
+     raw: echo " gopi " > /home/tekteacher/gopi.log
+
+     tags:
+       - firstname
+   
+   - name: designation
+     raw: echo " devops_engineer " > /home/tekteacher/gopi.log
+   
+     tags:
+      - role     

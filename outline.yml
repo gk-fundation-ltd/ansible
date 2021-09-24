@@ -1,0 +1,19 @@
+# outlining to my playbook
+---
+- hosts: tek
+  become: true
+  tasks:
+   - name: Display Date&Time for the beginind of the playbook
+     raw: /usr/bin/date > /home/tekteacher/begin_playbook_timestamp.log 
+
+   - name: install ftp
+     yum: pkg=ftp state=present
+   
+   - name: install telnet
+     yum: pkg=telnet state=present
+
+   - name: moving logs
+     raw: yum list installed > /home/tekteacher/telnet_installed.log
+
+   - name: Display Date&Time for ending of the playbook
+     raw: /usr/bin/date > /home/tekteacher/end_playbook_timestamp.log

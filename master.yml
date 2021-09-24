@@ -1,0 +1,6 @@
+# master playbook
+---
+- hosts: tek
+  become: true
+  roles: 
+    - r1

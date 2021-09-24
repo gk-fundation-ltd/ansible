@@ -1,0 +1,6 @@
+# include playbook
+--- 
+- hosts: tek
+  become: true
+  tasks:
+   - include: tasks.yml

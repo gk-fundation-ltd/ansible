@@ -1,0 +1,13 @@
+# this is my first playbook in ansible
+---
+- hosts: tek
+  become: true
+  vars_prompt:
+   - name: mahesh
+     prompt: please enter the package
+  tasks:
+   - name: package '{{ mahesh }}' installation
+     yum: pkg '{{ mahesh }}' state=present 
+
+   - name: service start
+     service: name='{{ mahesh }}' state=started

@@ -1,0 +1,5 @@
+
+- name: package installation
+  yum: pkg=httpd state=present 
+- name: service start
+  action: service name=httpd state=started
