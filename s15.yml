@@ -1,6 +1,6 @@
 # this is my first playbook in ansible
 ---
-- hosts: tek
+- hosts: demo[2]
   become: true
   vars_prompt:
    - name: mahesh

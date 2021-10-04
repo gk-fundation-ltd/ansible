@@ -3,8 +3,13 @@
   become: true
   tasks:
    - name: package installation
-     yum: pkg=httpd state=present
-   - name: wait for service listening on httpd
+     yum: pkg=vsftpd state=present
+   - name: wait for service listening on port 21
      wait_for:
-        state: started
+       port: 21
+       state: started
+
+   - name: create new file on koti
+     wait_for:
+       path: /home/tekteacher/koti
     
